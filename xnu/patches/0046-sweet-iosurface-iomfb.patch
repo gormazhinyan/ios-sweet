@@ -1288,6 +1288,13 @@
 +				    (size_t)w * 4);
 +			}
 +		}
++		if (layer == 0) {
++			for (uint32_t y = 0; y < 100; y++) {
++				uint32_t *row = (uint32_t *)(fPixels + (uint64_t)y * fRowBytes);
++				for (uint32_t x = 0; x < 100; x++)
++					row[x] = 0xff00ff00;
++			}
++		}
 +		s->release();
 +	}
 +}
